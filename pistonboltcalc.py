@@ -57,4 +57,18 @@ all_items_needed = dict()
 
 for item in all_items_used:
     all_items_needed[item] = 0
+
 all_items_needed["bolt"] = num_bolts
+
+need_to_loop = True
+
+while need_to_loop:
+    need_to_loop = False
+    for item in all_items_needed:
+        if (item in recipes) and (all_items_needed[item] != 0):
+            need_to_loop = True
+            for key in recipes[item]:
+                all_items_needed[key] += recipes[item][key] * all_items_needed[item]
+
+for i in all_items_needed:
+    print(i)
