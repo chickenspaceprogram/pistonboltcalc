@@ -24,7 +24,7 @@ recipes = {
         'quartz' : 1,
         'redstone torch' : 3
     },
-    'redstone_torch' : {
+    'redstone torch' : {
         'stick' : 1,
         'redstone dust' : 1
     },
@@ -34,10 +34,10 @@ recipes = {
     'plank' : {
         'log' : 0.25
     },
-    'iron_ingot' : {
+    'iron ingot' : {
         'iron block' : 1 / 9
     },
-    'redstone_dust' : {
+    'redstone dust' : {
         'redstone block' : 1 / 9
     }
 }
@@ -65,7 +65,7 @@ need_to_loop = True
 while need_to_loop:
     need_to_loop = False
     for item in all_items_needed:
-        if (item in recipes) and (all_items_needed[item] != 0):
+        if (item in recipes.keys()) and (all_items_needed[item] != 0):
             need_to_loop = True
             for key in recipes[item]:
                 all_items_needed[key] += recipes[item][key] * all_items_needed[item]
